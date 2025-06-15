@@ -359,17 +359,17 @@ class AnswerGenerator:
         }
     
     def generate_fallback_answer(self, processed_question: Dict[str, Any]) -> Dict[str, Any]:
-        """Enhanced fallback with comprehensive knowledge"""
-        return {
-            'answer': "I don't have specific information about this question in my current knowledge base. Please check the official TDS course materials at https://tds.s-anand.net/ or ask on the Discourse forum for community assistance.",
-            'links': [
-                {
-                    'url': 'https://tds.s-anand.net',
-                    'title': 'Official TDS Course Materials'
-                },
-                {
-                    'url': 'https://discourse.onlinedegree.iitm.ac.in',
-                    'title': 'TDS Discourse Forum'
-                }
-            ]
-        }
+    """Enhanced fallback with comprehensive knowledge"""
+    return {
+        'answer': "I don't have specific information about this question in my current knowledge base. Please check the official TDS course materials at https://tds.s-anand.net/ or ask on the Discourse forum for community assistance.",
+        'links': [
+            {
+                'url': 'https://tds.s-anand.net',
+                'text': 'Official TDS Course Materials'
+            },
+            {
+                'url': 'https://discourse.onlinedegree.iitm.ac.in',
+                'text': 'TDS Discourse Forum'
+            }
+        ]
+    }
