@@ -295,4 +295,4 @@ tests:
 
 writeLatestResults: true
 commandLineOptions:
-  cache: false
+  cache: true
