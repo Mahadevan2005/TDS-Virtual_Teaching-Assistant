@@ -82,13 +82,25 @@ async def answer_question(request: QuestionRequest):
         answer_data = answer_generator.generate_answer(processed_question)
         
         # Format response
+        # response = AnswerResponse(
+        #     answer=answer_data['answer'],
+        #     links=[
+        #         LinkResponse(url=link['url'], text=link.get('text', link.get('title', 'Link')))
+        #         for link in answer_data['links']
+        #     ]
+        # )
         response = AnswerResponse(
             answer=answer_data['answer'],
             links=[
-                LinkResponse(url=link['url'], text=link.get('text', link.get('title', 'Link')))
-                for link in answer_data['links']
+                LinkResponse(
+                    url=link.get('url', ''),
+                    text=link.get('text', 'Link')
+                )
+                for link in answer_data.get('links', [])
+                if isinstance(link, dict)
             ]
         )
+
         
         return response
         
