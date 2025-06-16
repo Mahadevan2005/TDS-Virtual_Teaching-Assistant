@@ -148,7 +148,7 @@ class AnswerGenerator:
                     return json.load(f)
             else:
                 # Fallback to existing data structure
-                filepath = os.path.join('data', '3_all_course_data.json')
+                filepath = os.path.join('data', 'course_content.json')
                 if os.path.exists(filepath):
                     with open(filepath, 'r', encoding='utf-8') as f:
                         return json.load(f)
@@ -165,7 +165,7 @@ class AnswerGenerator:
                     return json.load(f)
             else:
                 # Fallback to existing data structure
-                filepath = os.path.join('data', '2_discourse_posts_2025.json')
+                filepath = os.path.join('data', 'discourse_posts.json')
                 if os.path.exists(filepath):
                     with open(filepath, 'r', encoding='utf-8') as f:
                         return json.load(f)
